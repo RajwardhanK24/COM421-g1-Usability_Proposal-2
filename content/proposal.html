@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposed Changes | IIT Registration Proposal</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- Top Navigation Bar -->
+    <div class="red-bar">
+        <div class="left-redbar">
+            <i class="fas fa-th"></i>
+            <p><a href="../index.html">ILLINOIS TECH</a></p>
+        </div>
+        <div class="right-redbar">
+            <i id="settingsBtn" class="fas fa-cog"></i>
+        </div>
+    </div>
+
+    <!-- Side Navigation Panel -->
+    <div id="sideNav" class="side-nav">
+        <button class="close-btn" id="closeSideNav">&times;</button>
+        <ul>
+            <li><a href="./intro.html"><i class="fas fa-info"></i> Introduction</a></li>
+            <li><a href="./method.html"><i class="fas fa-database"></i> Methodology</a></li>
+            <li><a href="./summary.html"><i class="fas fa-chart-bar"></i> Summary</a></li>
+            <li><a href="./discussion.html"><i class="fas fa-comments"></i> Discussion</a></li>
+            <li><a href="./proposal.html"><i class="fas fa-lightbulb"></i> Proposal</a></li>
+            <li><a href="./appendix.html"><i class="fas fa-file-alt"></i> Appendix</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <div class="breadcrumb-container">
+            <p class="directory">
+                <span class="text"><a href="../index.html">Student</a></span> 
+                <span class="bullet">•</span> 
+                <span class="text active">Proposed Changes</span>
+            </p>
+        </div>
+
+        <section class="page-header">
+            <h1>Proposed Changes</h1>
+        </section>
+
+        <!-- Advanced Search Section -->
+        <section class="content-section">
+            <h2>Advanced Search</h2>
+            <p>
+                The advanced search interface can be optimized to reduce clutter and improve usability. For example:
+            </p>
+            <figure class="image-card">
+                <img src="../images/advanced_search_proposal.jpg" alt="A redesigned advanced search layout that combines filters horizontally." onclick="enlargeImage(this)">
+                <figcaption>Combining filters horizontally for a cleaner layout.</figcaption>
+            </figure>
+            <ul class="styled-list">
+                <li>Redundant fields can be removed to simplify the user interface.</li>
+                <li>Labels and field descriptions should be updated for clarity.</li>
+                <li>Tooltips or help icons can be added to explain complex terms.</li>
+            </ul>
+        </section>
+
+        <!-- Schedule Pane Section -->
+        <section class="content-section">
+            <h2>Schedule Pane</h2>
+            <p>The schedule pane should be reorganized to improve visibility and usability:</p>
+            <ul class="styled-list">
+                <li>
+                    <strong>Current Issue:</strong> 
+                    The schedule preview is located at the bottom, blocking the view of listed courses when opened.
+                </li>
+                <li>
+                    <strong>Proposed Solution:</strong> 
+                    Move the schedule preview to a dedicated tab at the top, alongside existing menu options.
+                </li>
+            </ul>
+            <figure class="image-card">
+                <img src="../images/schedule_pane_proposal1.png" alt="Schedule preview moved to the top as a dedicated tab." onclick="enlargeImage(this)">
+                <figcaption>Preview pane repositioned as a top tab.</figcaption>
+            </figure>
+            <p>
+                This change would allow users to fully utilize the functionality of each tab without overlapping content.
+                It also provides more space for advanced search filters, enabling a cleaner layout.
+            </p>
+        </section>
+
+        <!-- Redundant Tabs Section -->
+        <section class="content-section">
+            <h2>Redundant Tabs</h2>
+            <p>
+                Many tabs in the course information page, such as "Mutual Exclusion" or "Linked Sections," are often empty or unnecessary.
+                Condensing this information into the "Class Details" tab would simplify navigation and improve efficiency.
+            </p>
+            <figure class="image-card">
+                <img src="../images/redundancy_tabs_proposal1.png" alt="Redundant tabs removed and integrated into the main class detail view." onclick="enlargeImage(this)">
+                <figcaption>Integrating redundant tabs into the main class detail view.</figcaption>
+            </figure>
+            <ul class="styled-list">
+                <li>Focus on providing key attributes such as prerequisites, timing, and location.</li>
+                <li>Reduce the number of tabs by merging relevant information.</li>
+                <li>Highlight critical details directly in the "Class Details" tab for better visibility.</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- Image Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <img class="lightbox-content" id="lightboxImage">
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        // Lightbox Functionality
+        function enlargeImage(img) {
+            const lightbox = document.getElementById("lightbox");
+            const lightboxImage = document.getElementById("lightboxImage");
+            lightbox.style.display = "flex";
+            lightboxImage.src = img.src;
+        }
+
+        function closeLightbox() {
+            document.getElementById("lightbox").style.display = "none";
+        }
+
+        // Side Navigation Toggle
+        const settingsBtn = document.getElementById("settingsBtn");
+        const sideNav = document.getElementById("sideNav");
+        const closeSideNav = document.getElementById("closeSideNav");
+
+        settingsBtn.addEventListener("click", () => {
+            sideNav.style.width = "250px";
+        });
+
+        closeSideNav.addEventListener("click", () => {
+            sideNav.style.width = "0";
+        });
+    </script>
+</body>
+
+</html>

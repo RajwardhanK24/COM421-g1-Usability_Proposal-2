@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group 1: Proposal for IIT's Registration Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <div class="red-bar">
+        <div class="nav-container">
+            <div class="left-redbar">
+                <i class="fas fa-th"></i>
+                <p><a href="./index.html">ILLINOIS TECH</a></p>
+            </div>
+            <div class="right-redbar">
+                <i id="settingsBtn" class="fas fa-cog"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Side Navigation Panel -->
+    <div id="sideNav" class="side-nav">
+        <button class="close-btn" id="closeSideNav">&times;</button>
+        <ul>
+            <li><a href="./content/intro.html"><i class="fas fa-info"></i> Introduction</a></li>
+            <li><a href="./content/method.html"><i class="fas fa-database"></i> Methodology</a></li>
+            <li><a href="./content/summary.html"><i class="fas fa-chart-bar"></i> Summary</a></li>
+            <li><a href="./content/discussion.html"><i class="fas fa-comments"></i> Discussion</a></li>
+            <li><a href="./content/proposal.html"><i class="fas fa-lightbulb"></i> Proposal</a></li>
+            <li><a href="./content/appendix.html"><i class="fas fa-file-alt"></i> Appendix</a></li>
+        </ul>
+    </div>
+
+    <!-- Breadcrumb Navigation -->
+    <div class="breadcrumb-container">
+        <p class="directory">
+            <span class="text"><a href="./index.html">Student</a></span> 
+            <span class="bullet">•</span> 
+            <span class="text active"><a href="./index.html">Registration</a></span>
+        </p>
+    </div>
+
+    <!-- Main Section -->
+    <main>
+        <section class="page-header">
+            <h1>Registration</h1>
+            <p class="subtitle">Select a section to explore the registration process and proposed improvements</p>
+        </section>
+
+        <!-- Interactive Content Section -->
+        <div class="border">
+            <p class="gray">What would you like to view?</p>
+            <nav>
+                <ul class="header-grid">
+                    <li><a href="./content/intro.html">Introduction</a></li>
+                    <li><a href="./content/method.html">Research Methodology & Audit Protocols</a></li>
+                    <li><a href="./content/summary.html">Summary of Results</a></li>
+                    <li><a href="./content/discussion.html">Further Discussion</a></li>
+                    <li><a href="./content/proposal.html">Proposed Changes</a></li>
+                    <li><a href="./content/appendix.html">Appendix</a></li>
+                </ul>
+            </nav>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Illinois Tech | Group 1 Project</p>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Image Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <img class="lightbox-content" id="lightboxImage">
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        // Lightbox Functionality
+        function enlargeImage(img) {
+            const lightbox = document.getElementById("lightbox");
+            const lightboxImage = document.getElementById("lightboxImage");
+            lightbox.style.display = "flex";
+            lightboxImage.src = img.src;
+        }
+
+        function closeLightbox() {
+            document.getElementById("lightbox").style.display = "none";
+        }
+
+        // Side Navigation Toggle
+        const settingsBtn = document.getElementById("settingsBtn");
+        const sideNav = document.getElementById("sideNav");
+        const closeSideNav = document.getElementById("closeSideNav");
+
+        settingsBtn.addEventListener("click", () => {
+            sideNav.style.width = "250px";
+        });
+
+        closeSideNav.addEventListener("click", () => {
+            sideNav.style.width = "0";
+        });
+    </script>
+</body>
+
+</html>

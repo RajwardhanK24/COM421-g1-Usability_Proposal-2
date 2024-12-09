@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Methodology & Protocols | IIT Registration Proposal</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- Top Navigation Bar -->
+    <div class="red-bar">
+        <div class="left-redbar">
+            <i class="fas fa-th"></i>
+            <p><a href="../index.html">ILLINOIS TECH</a></p>
+        </div>
+        <div class="right-redbar">
+            <i id="settingsBtn" class="fas fa-cog"></i>
+        </div>
+    </div>
+
+    <!-- Side Navigation Panel -->
+    <div id="sideNav" class="side-nav">
+        <button class="close-btn" id="closeSideNav">&times;</button>
+        <ul>
+            <li><a href="./intro.html"><i class="fas fa-info"></i> Introduction</a></li>
+            <li><a href="./method.html"><i class="fas fa-database"></i> Methodology</a></li>
+            <li><a href="./summary.html"><i class="fas fa-chart-bar"></i> Summary</a></li>
+            <li><a href="./discussion.html"><i class="fas fa-comments"></i> Discussion</a></li>
+            <li><a href="./proposal.html"><i class="fas fa-lightbulb"></i> Proposal</a></li>
+            <li><a href="./appendix.html"><i class="fas fa-file-alt"></i> Appendix</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <div class="breadcrumb-container">
+            <p class="directory">
+                <span class="text"><a href="../index.html">Student</a></span> 
+                <span class="bullet">•</span> 
+                <span class="text active">Research Methodology & Audit Protocols</span>
+            </p>
+        </div>
+
+        <section class="page-header">
+            <h1>Research Methodology & Audit Protocols</h1>
+        </section>
+
+        <section class="content-section">
+            <h2>Methodology</h2>
+            <p>
+                To gather general sentiments, we released a survey via Google Forms asking users to rank specific features on a Likert scale. 
+                This allowed users to quickly share their impressions of Banner, and we were able to easily process the data. 
+                The survey also featured optional open-ended feedback to keep it convenient for users. The survey was distributed 
+                to peers and current students via Slack, Discord, and email.
+            </p>
+            <figure class="image-card">
+                <img src="../images/sample_survey_question.png" alt="A sample survey question asked of the users about searching for classes on Banner." onclick="enlargeImage(this)">
+                <figcaption>Sample survey question asking how users felt about searching for classes.</figcaption>
+            </figure>
+
+            <p>
+                Specifically, the survey asked users to rank the following features of Banner on a Likert scale from 1-5:
+            </p>
+            <ul class="styled-list">
+                <li>Searching for classes</li>
+                <li>Advanced search</li>
+                <li>Search results</li>
+                <li>Course details</li>
+                <li>Preview panel</li>
+                <li>Semester and PIN selection</li>
+                <li>Plan Ahead</li>
+            </ul>
+
+            <p>
+                Users were also asked about navigating between websites like DegreeWorks and the course catalog to plan their schedules. 
+                Additionally, the survey inquired whether users preferred alternative platforms (e.g., Clarify) over Banner and why.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2>Protocols</h2>
+            <p>
+                After gathering sufficient survey data, we conducted usability tests. Two tests were designed: 
+                (1) measuring the time to schedule courses between Banner and Clarify, and (2) comparing Banner 
+                with registration systems from other universities. The details for each test are as follows:
+            </p>
+
+            <h3>Time to Schedule Courses</h3>
+            <ol class="styled-list">
+                <li>Users navigate to the course catalog and pick a program they are not currently in.</li>
+                <li>Users choose a semester with at least one elective/SSCI/HUM course and preferably 17-18 credit hours.</li>
+                <li>Users use the "Plan Ahead" feature in Banner to plan their schedule.</li>
+                <li>The time taken to complete registration without conflicts is recorded using a stopwatch.</li>
+                <li>Users repeat the process with another program but use Clarify instead of Banner.</li>
+            </ol>
+
+            <h3>Class Searching at Other Universities</h3>
+            <ol class="styled-list">
+                <li>Users are provided with links to search for classes at Northwestern University and the University of Chicago.</li>
+                <li>Users explore the sites for a few minutes.</li>
+                <li>Users rank whether the websites are better or worse than Illinois Tech's registration portal.</li>
+            </ol>
+
+            <figure class="image-card">
+                <img src="../images/uchicago_vers.png" alt="Screenshot of class searching at the University of Chicago with concise information and colorful indicators." onclick="enlargeImage(this)">
+                <figcaption>Class searching at UChicago, which provides concise information about classes.</figcaption>
+            </figure>
+        </section>
+    </main>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- Image Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <img class="lightbox-content" id="lightboxImage">
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        // Lightbox Functionality
+        function enlargeImage(img) {
+            const lightbox = document.getElementById("lightbox");
+            const lightboxImage = document.getElementById("lightboxImage");
+            lightbox.style.display = "flex";
+            lightboxImage.src = img.src;
+        }
+
+        function closeLightbox() {
+            document.getElementById("lightbox").style.display = "none";
+        }
+
+        // Side Navigation Toggle
+        const settingsBtn = document.getElementById("settingsBtn");
+        const sideNav = document.getElementById("sideNav");
+        const closeSideNav = document.getElementById("closeSideNav");
+
+        settingsBtn.addEventListener("click", () => {
+            sideNav.style.width = "250px";
+        });
+
+        closeSideNav.addEventListener("click", () => {
+            sideNav.style.width = "0";
+        });
+    </script>
+</body>
+
+</html>
